@@ -1,0 +1,39 @@
+###############################################################################
+# 配置示例（复制为 config.yml 后填写；config.yml 已在 .gitignore 中，不会提交）
+###############################################################################
+
+# 消息推送：method 0=禁用 1=webApi 2=APPRISE
+notifyOption:
+    method: 0
+    mailApiUrl: ''
+
+# 腾讯云 OCR（可选，用于识别登录图形验证码）
+ocrOption:
+    SecretId: 'APIid'
+    SecretKey: 'APIkey'
+
+# 全局 HTTP 代理（可选）
+httpProxy: ''
+
+users:
+    - user:
+        # 任务类型：0收集 / 1签到 / 2查寝 / 3政工签到 / 4教师工作日志
+        type: 2
+        # 学校全称（须与 mobile.campushoy.com/v6/config/guest/tenant/list 返回的 name 一致）
+        schoolName: '你的学校全称'
+        # 学号 / 工号
+        username: '你的学号'
+        # 密码
+        password: '你的密码'
+        # 定位地址文本（展示用）
+        address: '签到点地址文本'
+        # 经度（**必须落在服务端签到点的半径内**，否则会“签到失败”）
+        lon: 0.0
+        # 纬度
+        lat: 0.0
+        # 异常原因（无则留空，不可删）
+        abnormalReason: ''
+        # isPhoto=1 的任务必填：签到照片（相对项目根目录）
+        photo: daka.jpg
+        # 是否严格校验表单标题：1校验 0不校验
+        checkTitle: 0
